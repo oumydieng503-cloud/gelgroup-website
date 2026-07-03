@@ -1,0 +1,330 @@
+:root {
+    --navy: #0a2342;
+    --gold: #c5a028;
+    --white: #fff;
+    --gray-50: #f7f8fa;
+    --gray-200: #dde3ea;
+    --gray-500: #6b7a8d;
+    --green: #166534;
+    --red: #991b1b;
+    --blue: #1d4ed8;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body.admin-body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--gray-50);
+    color: var(--navy);
+    min-height: 100vh;
+}
+
+.admin-header {
+    background: var(--navy);
+    color: var(--white);
+    padding: 0 1.5rem;
+}
+
+.admin-header__inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.admin-brand {
+    color: var(--gold);
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.admin-header__actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.admin-header__actions a {
+    color: rgba(255,255,255,0.8);
+    font-size: 0.85rem;
+    text-decoration: none;
+}
+
+.admin-header__actions button {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.3);
+    color: var(--white);
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.8rem;
+}
+
+.admin-main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+.admin-alert {
+    padding: 1rem;
+    border-radius: 6px;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.admin-alert--success {
+    background: #ecfdf3;
+    color: var(--green);
+    border: 1px solid #bbf7d0;
+}
+
+.admin-login {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.admin-login__card {
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 8px 32px rgba(10,35,66,0.12);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.admin-login__card h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+}
+
+.admin-login__card > p {
+    color: var(--gray-500);
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+}
+
+.admin-field {
+    text-align: left;
+    margin-bottom: 1.25rem;
+}
+
+.admin-field label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.4rem;
+}
+
+.admin-field input,
+.admin-status-form select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--gray-200);
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 0.95rem;
+}
+
+.admin-error {
+    display: block;
+    color: var(--red);
+    font-size: 0.8rem;
+    margin-top: 0.3rem;
+}
+
+.admin-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    background: var(--gold);
+    color: var(--navy);
+    border: none;
+    border-radius: 6px;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.admin-btn--small {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    margin-top: 0.75rem;
+}
+
+.admin-page h1 {
+    font-size: 1.75rem;
+    margin-bottom: 0.25rem;
+}
+
+.admin-subtitle {
+    color: var(--gray-500);
+    margin-bottom: 2rem;
+}
+
+.admin-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.admin-stat {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: 8px;
+    padding: 1.25rem;
+    text-align: center;
+}
+
+.admin-stat strong {
+    display: block;
+    font-size: 2rem;
+    color: var(--gold);
+}
+
+.admin-stat span {
+    font-size: 0.8rem;
+    color: var(--gray-500);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.admin-section {
+    margin-bottom: 2.5rem;
+}
+
+.admin-section h2 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.admin-empty {
+    color: var(--gray-500);
+    font-size: 0.9rem;
+    padding: 1.5rem;
+    background: var(--white);
+    border-radius: 8px;
+    border: 1px solid var(--gray-200);
+}
+
+.admin-table-wrap {
+    overflow-x: auto;
+    background: var(--white);
+    border-radius: 8px;
+    border: 1px solid var(--gray-200);
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+}
+
+.admin-table th,
+.admin-table td {
+    padding: 0.85rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.admin-table th {
+    background: var(--gray-50);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--gray-500);
+}
+
+.admin-link {
+    color: var(--gold);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.admin-badge {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    border-radius: 50px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.admin-badge--en_attente { background: #fef3c7; color: #92400e; }
+.admin-badge--en_cours { background: #dbeafe; color: var(--blue); }
+.admin-badge--accepte { background: #dcfce7; color: var(--green); }
+.admin-badge--refuse { background: #fee2e2; color: var(--red); }
+
+.admin-back {
+    display: inline-block;
+    color: var(--gray-500);
+    text-decoration: none;
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+}
+
+.admin-detail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.admin-detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.admin-card {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+.admin-card h3 {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.admin-card p {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+.admin-card a { color: var(--navy); }
+
+.admin-message-body {
+    white-space: pre-wrap;
+    line-height: 1.7;
+    font-size: 0.92rem;
+}
+
+@media (max-width: 768px) {
+    .admin-stats,
+    .admin-detail-grid {
+        grid-template-columns: 1fr;
+    }
+}
