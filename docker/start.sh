@@ -3,10 +3,16 @@ set -e
 
 cd /var/www/html
 
-# Render fournit DATABASE_URL (postgres://...) — Laravel attend DB_URL (pgsql://...)
+# Si Render fournit une base Postgres, on l'utilise
 if [ -n "$DATABASE_URL" ]; then
   export DB_CONNECTION=pgsql
   export DB_URL="$(echo "$DATABASE_URL" | sed 's#^postgres://#pgsql://#' | sed 's#^postgresql://#pgsql://#')"
+else
+  # Sinon SQLite (plus simple pour démarrer)
+  export DB_CONNECTION=sqlite
+  export DB_DATABASE="${DB_DATABASE:-/var/www/html/database/database.sqlite}"
+  touch "$DB_DATABASE"
+  chmod 664 "$DB_DATABASE" || true
 fi
 
 php artisan config:clear
