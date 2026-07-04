@@ -4,6 +4,7 @@ RUN apt-get update && apt-get install -y \
     git \
     unzip \
     libpq-dev \
+    libsqlite3-dev \
     libzip-dev \
     libpng-dev \
     libjpeg-dev \
