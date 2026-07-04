@@ -23,11 +23,18 @@ RUN composer install --no-dev --optimize-autoloader --no-interaction --no-script
 COPY . .
 
 RUN composer dump-autoload --optimize \
-    && mkdir -p storage/framework/{cache,sessions,views} storage/logs storage/app/public/cvs bootstrap/cache \
-    && chmod -R 775 storage bootstrap/cache
+    && mkdir -p storage/framework/cache/data \
+        storage/framework/sessions \
+        storage/framework/views \
+        storage/logs \
+        storage/app/public/cvs \
+        bootstrap/cache \
+        database \
+    && chmod -R 777 storage bootstrap/cache database \
+    && sed -i 's/\r$//' /var/www/html/docker/start.sh || true
 
 COPY docker/start.sh /usr/local/bin/start.sh
-RUN chmod +x /usr/local/bin/start.sh
+RUN sed -i 's/\r$//' /usr/local/bin/start.sh && chmod +x /usr/local/bin/start.sh
 
 EXPOSE 10000
 
