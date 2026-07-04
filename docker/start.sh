@@ -31,6 +31,11 @@ export CACHE_STORE="${CACHE_STORE:-array}"
 export QUEUE_CONNECTION="${QUEUE_CONNECTION:-sync}"
 export LOG_CHANNEL="${LOG_CHANNEL:-stderr}"
 
+if [ -z "$APP_KEY" ]; then
+  echo "ERREUR: APP_KEY manquante. Ajoutez-la dans Render > Environment."
+  exit 1
+fi
+
 php artisan package:discover --ansi || true
 php artisan config:clear
 php artisan cache:clear || true
